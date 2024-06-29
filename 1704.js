@@ -73,3 +73,24 @@ var halvesAreAlike2 = function (s) {
   
   console.log(halvesAreAlike("book")); 
 
+
+// solution3 
+
+var halvesAreAlike = function (s) {
+    let balance = 0;
+    let mid = Math.floor(s.length / 2);
+    const vowels = "aeiouAEIOU";
+  
+    for (i = 0; i < mid; i++) {
+      if (vowels.includes(s[i])) {
+        balance++;
+      }
+      if (vowels.includes(s[mid + i])) {
+        balance--;
+      }
+    }
+    return balance == 0;
+  };
+  
+  console.log(halvesAreAlike("book")); 
+
